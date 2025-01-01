@@ -43,4 +43,22 @@ func main() {
 	fmt.Println(a, b)
 	defer fmt.Println("nahi tu bhak 😡")
 	fmt.Println("chal bhak 😔")
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+	primes := [6]int{34, 34, 65, 23, 45, 3}
+	var s []int = primes[1:4]
+	fmt.Println(s)
+
+	u := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, true},
+		{4, true},
+		{5, true},
+		{6, true},
+	}
+	fmt.Println(u)
 }
