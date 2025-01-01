@@ -20,12 +20,36 @@ func sum(s []int, c chan int) {
 	c <- sum
 }
 
+func fib(c, quit chan int) {
+	x, y := 0, 1
+	for {
+		select {
+		case c <- x:
+			x, y = y, x+y
+		case <-quit:
+			fmt.Println("quit")
+			return
+		}
+	}
+}
+
 func main() {
 	// go say("world")
 	// say("hello")
-	s := []int{7, 2, 8, -9, 4, 0}
-
+	// s := []int{7, 2, 8, -9, 4, 0}
+	//
+	// c := make(chan int)
+	// go sum(s[:len(s)/2], c)
+	// go sum(s[:len(s)/2], c)
 	c := make(chan int)
-	go sum(s[:len(s)/2], c)
-	go sum(s[:len(s)/2], c)
+	quit := make(chan int)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			fmt.Println(<-c)
+		}
+		quit <- 0
+	}()
+	fib(c, quit)
+
 }
