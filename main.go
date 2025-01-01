@@ -90,4 +90,10 @@ func main() {
 		fmt.Println("chal bhak 😔 maps")
 	}
 
+	manyEmojies := func() string {
+		return "😡😏😎"
+	}
+
+	fmt.Println(manyEmojies())
+
 }
