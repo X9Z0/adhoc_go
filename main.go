@@ -17,6 +17,12 @@ func swap(x, y string) (string, string) {
 	return y, x
 }
 
+type Vertex struct {
+	Lat, Long float64
+}
+
+var m map[string]Vertex
+
 func osFind() {
 	switch os := runtime.GOOS; os {
 	case "darwin":
@@ -37,6 +43,10 @@ func asign() {
 }
 
 var meo, neow bool
+
+func printSlice(s string, x []int) {
+	fmt.Printf("%s len=%d cap=%d %v\n", s, len(x), cap(x), x)
+}
 
 func main() {
 	a, b := swap("mr", "fg")
@@ -61,4 +71,12 @@ func main() {
 		{6, true},
 	}
 	fmt.Println(u)
+
+	// make is used for initalizing reference type
+	// 0 value of reference are nil
+
+	h := make([]int, 5)
+	printSlice("h", h)
+	m = make(map[string]Vertex)
+
 }
