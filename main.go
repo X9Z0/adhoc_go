@@ -39,6 +39,17 @@ func osFind() {
 	}
 }
 
+func do(i interface{}) {
+	switch v := i.(type) {
+	case int:
+		fmt.Println("alu")
+	case string:
+		fmt.Printf("is %v tamatar", len(v))
+	default:
+		fmt.Println("hahaha")
+	}
+}
+
 func asign() {
 	var x, y int = 3, 4
 	var f float64 = math.Sqrt(float64(x*x + y*y))
@@ -99,6 +110,8 @@ func main() {
 	}
 
 	fmt.Println(manyEmojies())
-	//NOTE: while using the methods on the struct always remeber that if once you have used the pointer based method do not used the the
+	//NOTE: while using the methods on the struct always remeber that if once you have used the pointer
+	//based method do not used the the
 	// the byValue method because it is not good to use both at the same time for a single struct
+
 }
