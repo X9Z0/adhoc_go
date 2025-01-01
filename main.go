@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"math/cmplx"
+	"runtime"
 )
 
 var (
@@ -14,6 +15,18 @@ var (
 
 func swap(x, y string) (string, string) {
 	return y, x
+}
+
+func osFind() {
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("meow")
+	case "linux":
+		fmt.Println("linux")
+	default:
+		fmt.Println("chal bhak 😔")
+
+	}
 }
 
 func asign() {
