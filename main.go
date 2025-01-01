@@ -78,5 +78,9 @@ func main() {
 	h := make([]int, 5)
 	printSlice("h", h)
 	m = make(map[string]Vertex)
+	m["Bell Labs"] = Vertex{
+		40.2837, -82.232,
+	}
+	fmt.Println(m["Bell Labs"])
 
 }
