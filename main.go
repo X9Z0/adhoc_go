@@ -21,6 +21,10 @@ type Vertex struct {
 	Lat, Long float64
 }
 
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(34)
+}
+
 var m map[string]Vertex
 
 func osFind() {
@@ -95,5 +99,6 @@ func main() {
 	}
 
 	fmt.Println(manyEmojies())
-
+	//NOTE: while using the methods on the struct always remeber that if once you have used the pointer based method do not used the the
+	// the byValue method because it is not good to use both at the same time for a single struct
 }
