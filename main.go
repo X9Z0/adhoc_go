@@ -83,4 +83,11 @@ func main() {
 	}
 	fmt.Println(m["Bell Labs"])
 
+	v, ok := m["Labs"]
+	if ok {
+		fmt.Println(v)
+	} else {
+		fmt.Println("chal bhak 😔 maps")
+	}
+
 }
