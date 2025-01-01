@@ -41,4 +41,6 @@ var meo, neow bool
 func main() {
 	a, b := swap("mr", "fg")
 	fmt.Println(a, b)
+	defer fmt.Println("nahi tu bhak 😡")
+	fmt.Println("chal bhak 😔")
 }
